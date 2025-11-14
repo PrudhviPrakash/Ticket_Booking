@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Ticket } from 'lucide-react';
 
 interface BookingFormProps {
-  onBookingStarted: (requestId: string) => void;
+  onBookingStarted: (requestId: string, queuePosition: number, numSeats: number) => void;
 }
 
 export const BookingForm = ({ onBookingStarted }: BookingFormProps) => {
@@ -21,9 +21,9 @@ export const BookingForm = ({ onBookingStarted }: BookingFormProps) => {
     onSuccess: (data) => {
       toast({
         title: 'Booking request submitted',
-        description: `Request ID: ${data.requestId}`,
+        description: `Request ID: ${data.requestId}. Queue position: #${data.totalInQueue}`,
       });
-      onBookingStarted(data.requestId);
+      onBookingStarted(data.requestId, data.totalInQueue, numSeats);
     },
     onError: () => {
       toast({
