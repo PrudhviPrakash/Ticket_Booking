@@ -63,7 +63,7 @@ export const AuthForm = ({ onAuthSuccess }: AuthFormProps) => {
           <div className="mx-auto w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
             <Train className="w-6 h-6 text-primary-foreground" />
           </div>
-          <CardTitle className="text-2xl">Rail Ticket Booking</CardTitle>
+          <CardTitle className="text-2xl">Ticket Booking</CardTitle>
           <CardDescription>Sign in to book your tickets</CardDescription>
         </CardHeader>
         <CardContent>
